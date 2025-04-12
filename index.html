@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel & Random Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Spin & Assign</h1>
+            <p>Enter names and options, then spin the wheel!</p>
+        </header>
+
+       <div class="row1">
+            <section class="app-card config-section" id="configForm">
+                <h2>Configuration</h2>
+                <div class="form-grid">
+                <div class="form-group">
+                    <label for="namesInput">Enter Names (comma separated):</label>
+                    <input type="text" id="namesInput" placeholder="e.g. John, Saif, Emily, Michael">
+                </div>
+                <div class="form-group">
+                    <label for="optionsInput">Enter Options (comma separated):</label>
+                    <input type="text" id="optionsInput" placeholder="e.g. Chapter 1, Chapter 2, Chapter 3">
+                </div>
+            </div>
+            <button id="createWheelButton" class="btn btn-primary">Create Wheel</button>
+        </section>
+
+        <section class="wheel-section" id="wheelSection" style="display: none;">
+            <div class="wheel-container">
+                <div class="pointer-container">
+                    <div class="pointer"></div>
+                </div>
+                <div id="wheel" class="wheel">
+                    </div>
+                <div class="wheel-center"></div> 
+            </div>
+            <button id="spinButton" class="btn btn-spin">Spin the Wheel</button>
+        </section>
+
+       </div>
+        <section id="resultContainer" class="app-card result-section" style="display: none;">
+            <h2>Assignment Results</h2>
+            <p id="saifNote" class="saif-note" style="display: none;"></p>
+            <ul id="resultList"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

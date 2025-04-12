@@ -1,0 +1,456 @@
+/* style.css */
+
+:root {
+    --primary-color: #4a90e2; /* Brighter blue */
+    --primary-dark: #357abd;
+    --secondary-color: #f4f7f6; /* Lighter background */
+    --text-dark: #333;
+    --text-light: #555;
+    --border-color: #e0e5ec;
+    --shadow-color: rgba(50, 50, 93, 0.1);
+    --shadow-hover-color: rgba(50, 50, 93, 0.15);
+    --white: #fff;
+    --success-color: #2ecc71; /* For highlighting Saif */
+  
+    /* Sizing Variables */
+    --wheel-size: 350px;
+    --wheel-border: 8px;
+    --pointer-size: 40px;
+  }
+  
+  /* --- Global Layout & Body --- */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex; /* Use flexbox for vertical centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    text-align: center; /* Center text globally unless overridden */
+    overflow-x: hidden; /* Prevent potential horizontal overflow */
+  }
+  
+  .container {
+
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+  }
+  
+  .row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* --- Card Styling --- */
+  .app-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 7px 14px var(--shadow-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s ease;
+    text-align: left; /* Reset text-align for card content */
+    margin-left: auto; /* Center cards within the container */
+    margin-right: auto;
+    max-width: 600px; /* Max width for cards */
+    width: 100%; /* Allow cards to shrink */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  .app-card:hover {
+     box-shadow: 0 10px 20px var(--shadow-hover-color);
+  }
+  
+  .app-card h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      color: var(--primary-dark);
+      text-align: center;
+      font-weight: 600;
+  }
+  
+  /* --- Form Styling --- */
+  .config-section .form-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* Default to single column */
+      gap: 20px;
+      margin-bottom: 25px;
+  }
+  
+  /* Use two columns on wider screens */
+  @media (min-width: 600px) {
+      .config-section .form-grid {
+          grid-template-columns: 1fr 1fr;
+      }
+  }
+  
+  .form-group {
+    margin-bottom: 0; /* Adjusted due to grid gap */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+  }
+  
+  input[type="text"]:focus,
+  input[type="text"]:focus-visible {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+    background-color: var(--white);
+  }
+  
+  /* --- Button Styling --- */
+  .btn {
+    color: var(--white);
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  
+  .btn-primary {
+      background-color: var(--primary-color);
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  .btn-primary:disabled {
+      background-color: #bdc3c7;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+  }
+  
+  .btn-spin {
+      background-color: var(--success-color);
+      max-width: 250px;
+      margin: 0 auto; /* Center spin button */
+      margin-top: 10px;
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  .btn-spin:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* --- Wheel Section --- */
+  .wheel-section {
+      text-align: center;
+      margin-bottom: 30px;
+      margin-left: 10%;
+      padding-top: 10px;
+      position: relative; /* Needed for absolute positioning */
+      max-width: 100%;
+  }
+  
+  .wheel-container {
+    position: relative; /* Keep relative for pointer positioning */
+    width: var(--wheel-size);
+    height: var(--wheel-size);
+    margin: 0 auto 25px auto; /* Center wheel, add bottom margin */
+  }
+  
+  .wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: var(--wheel-border) solid var(--white); /* Use variable */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 0 10px var(--border-color);
+    background: conic-gradient(from 0deg, #FF6B6B, #FFD166, #06D6A0, #118AB2, #073B4C); /* Example gradient */
+    transition: transform 6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  /* --- Slice & Text Styling (No changes needed here from previous good version) --- */
+  .slice {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .slice .text-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      transform-origin: 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 20px;
+      box-sizing: border-box;
+  }
+  
+  .slice .text {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: rotate(90deg);
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  
+  /* --- Pointer Alignment Fix --- */
+  .pointer-container {
+    position: absolute;
+    /* Position precisely at the 3 o'clock mark */
+    top: 50%;
+    /* Left edge of pointer container = right edge of wheel content + half wheel border */
+    left: calc(100% + var(--wheel-border) / 2);
+    transform: translateY(-50%); /* Vertical center adjustment */
+    z-index: 10;
+    width: var(--pointer-size); /* Use variable */
+    height: var(--pointer-size); /* Use variable */
+  }
+  
+  .pointer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    /* Pointer shape pointing LEFT towards the wheel */
+    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); /* Re-add shadow if desired */
+  }
+  
+  /* --- Optional Wheel Center Styling --- */
+  .wheel-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+      z-index: 5;
+      border: 4px solid var(--border-color);
+  }
+  
+  /* --- Result Section & Confetti Container --- */
+  .result-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      position: relative; /* Make this the reference for confetti */
+      overflow: hidden; /* Prevent confetti overflow before animation */
+      margin-top: 30px; /* Add some space above results */
+  }
+  
+  .result-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      overflow: visible; /* Allow confetti to fly out once visible */
+  }
+  
+  .saif-note {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 15px;
+      background-color: #eafaf1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #c8e6c9;
+  }
+  
+  #resultList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #resultList li {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  #resultList li.visible {
+      opacity: 1;
+  }
+  
+  #resultList li:last-child {
+    border-bottom: none;
+  }
+  
+  #resultList li.saif-result {
+      background-color: #f0fff4;
+      border-left: 4px solid var(--success-color);
+      padding-left: 15px;
+  }
+  
+  .result-name {
+    font-weight: 600;
+    color: var(--primary-dark);
+    flex-basis: 40%;
+    text-align: left;
+    padding-right: 5px; /* Add spacing */
+  }
+  
+  .result-arrow {
+    color: var(--text-light);
+    margin: 0 5px; /* Reduced margin */
+    font-size: 1.2rem;
+  }
+  
+  .result-option {
+    font-weight: 400;
+    color: var(--text-dark);
+    flex-basis: 50%;
+    text-align: right;
+    padding-left: 5px; /* Add spacing */
+  }
+  
+  /* --- Confetti CSS --- */
+  .confetti {
+    position: absolute; /* Absolute within .result-section */
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color); /* Default color */
+    opacity: 0; /* Start hidden */
+    pointer-events: none; /* Don't interfere with clicks */
+    z-index: 1000; /* Above everything */
+    /* Start position set by JS */
+  }
+  
+  @keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(80vh) rotate(720deg); opacity: 0; }
+  }
+  
+  /* --- Fade-in Animation --- */
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  /* Apply to sections appearing */
+  .wheel-section.fade-in {
+      animation: fadeIn 0.5s ease forwards;
+  }
+  /* Note: result-section uses inline style transitions + visible class */
+  
+  
+  /* --- Responsive adjustments --- */
+  @media (max-width: 600px) {
+      :root {
+          --wheel-size: 280px; /* Adjust variable for smaller screens */
+          --pointer-size: 35px;
+      }
+  
+      body {
+          justify-content: flex-start; /* Align content to top on mobile */
+          padding-top: 15px; /* Add padding at the top */
+      }
+  
+      .container {
+        width: 95%; /* Slightly wider on mobile */
+        margin: 10px 0;
+      }
+  
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+  
+      .app-card {
+          padding: 20px;
+      }
+  
+      .pointer-container {
+           /* Adjust positioning slightly if needed */
+           left: calc(100% + var(--wheel-border) / 4); /* Reduce offset slightly */
+      }
+  
+      .wheel-center { width: 30px; height: 30px; }
+      .slice .text { font-size: 11px; }
+  
+      .btn { padding: 12px 20px; font-size: 0.9rem; }
+  
+      #resultList li {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 10px 5px; /* Adjust padding */
+      }
+      .result-name, .result-option {
+          flex-basis: auto;
+          width: 100%;
+          text-align: center;
+      }
+      .result-arrow {
+          transform: rotate(90deg);
+          margin: 5px 0;
+      }
+  }
